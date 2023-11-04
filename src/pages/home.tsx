@@ -1,5 +1,5 @@
-const App = () => {
+const HomePage = () => {
   return <div className=""> - Hello DocRender!</div>;
 };
 
-export default App;
+export default HomePage;

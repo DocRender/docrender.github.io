@@ -1,0 +1,49 @@
+{
+  "type": "business",
+  "title": "个人基本信息",
+  "content": [
+    {
+      "type": "rows",
+      "content": [
+        [
+          {
+            "value": "index.photo",
+            "form": { "name": "picture" },
+            "style": {
+              "position": "absolute",
+              "right": 0,
+              "height": "calc(var(--row-height) * 3)",
+              "width": "var(--label-width)",
+              "zIndex": "999"
+            },
+            "styles": {
+              "label": { "display": "none" },
+              "value": { "width": "100%", "position": "absolute", "right": 0, "padding": "2px" }
+            }
+          }
+        ],
+        [
+          { "label": "姓名", "value": "index.name", "size": "half-xs" },
+          { "label": "性别", "value": "index.gender", "size": "xs", "form": { "mode": "pop", "name": "radio" } },
+          { "label": "出生年月", "value": "index.birthdate", "form": { "name": "date" }, "size": "half-label" }
+        ],
+        [
+          { "label": "公民身份号码", "value": "index.idNo" },
+          { "label": "血型", "value": "content.bloodType", "form": { "mode": "pop", "name": "radio", "options": "血型" }, "size": "half-label" }
+        ],
+        [
+          { "label": "医疗账号", "value": "" },
+          { "label": "民族", "value": "", "form": { "name": "select" }, "size": "half-label" }
+        ],
+        [
+          { "label": "证件类型", "value": "", "form": { "name": "select" } },
+          { "label": "籍贯", "value": "", "form": { "name": "cascader" } }
+        ],
+        [
+          { "label": "证件编号", "value": "" },
+          { "label": "出生地", "value": "", "form": { "name": "cascader" } }
+        ]
+      ]
+    }
+  ]
+}

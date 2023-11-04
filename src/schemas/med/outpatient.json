@@ -1,0 +1,102 @@
+{
+  "type": "business",
+  "title": "19. 门急诊摘要信息",
+  "content": [
+    {
+      "type": "rows",
+      "content": [
+        [
+          { "label": "姓名", "value": "header.index.name", "size": "half-xs" },
+          {
+            "label": "性别",
+            "value": "header.index.gender",
+            "size": "xs",
+            "form": {
+              "mode": "pop",
+              "name": "radio",
+              "on": {
+                "params": ["header.index.idNo"],
+                "fn": "function func(idNo) { if (idNo && idNo.length === 18) {return idNo.substr(16, 1) % 2 === 0 ? '女' : '男'} }"
+              }
+            }
+          },
+          {
+            "label": "出生年月",
+            "value": "header.index.birthdate",
+            "form": {
+              "name": "date",
+              "on": {
+                "params": ["header.index.idNo"],
+                "fn": "function func(idNo) { if (idNo && idNo.length === 18) {return idNo.substr(6, 4) + '-' + idNo.substr(10, 2 ) + '-' + idNo.substr(12, 2)} }"
+              }
+            }
+          }
+        ],
+        [{ "label": "公民身份号码", "value": "header.index.idNo", "size": "full" }],
+        [
+          { "label": "就诊日期", "value": "content.summary.admittedAt", "form": { "name": "date" } },
+          { "label": "门诊分类", "value": "content.summary.outpatientType", "form": { "name": "radio" } }
+        ],
+        [
+          { "label": "就诊单位", "value": "content.summary.admissionUnit" },
+          { "label": "科室", "value": "content.summary.department" }
+        ],
+        [
+          { "label": "接诊医生", "value": "content.summary.admittingDoctor" },
+          { "label": "就诊类型", "value": "content.summary.firstOutpatientFlag", "form": { "name": "radio" } }
+        ],
+        [{ "label": "主诉与症状", "value": "content.reasonForEncounter.presentingProblem", "form": { "name": "textarea" }, "style": { "height": "20mm" }, "size": "full" }],
+        [{ "label": "初步诊断", "value": "content.diagnosis", "form": { "name": "select", "mode": "multiple", "options": "门诊诊断" }, "size": "full" }],
+        [{ "label": "处置措施", "value": "content.treatment", "form": { "name": "select", "mode": "multiple", "options": "处置措施" }, "size": "full" }],
+        [{ "label": "用药记录", "style": { "background": "#ddd" }, "size": "full-label" }],
+        [
+          {
+            "type": "table",
+            "value": "content.medications",
+            "minRows": 4,
+            "header": [
+              { "label": "药物名称", "value": "name", "width": "70mm", "form": { "name": "select", "options": "门诊药物" } },
+              { "label": "药物剂型", "value": "form", "width": "18mm" },
+              { "label": "用药天数", "value": "duration", "width": "18mm" },
+              { "label": "使用频率", "value": "frequency", "width": "18mm" },
+              { "label": "次剂量", "value": "dose", "width": "18mm" },
+              { "label": "总剂量", "value": "total", "width": "21.4mm" },
+              { "label": "给药途径", "value": "route", "width": "26mm" }
+            ],
+            "rowHeight": "7.8mm"
+          }
+        ],
+        [{ "label": "手术记录", "style": { "background": "#ddd" }, "size": "full-label" }],
+        [
+          {
+            "type": "table",
+            "value": "content.procedures",
+            "minRows": 2,
+            "header": [
+              { "label": "手术名称", "value": "operation", "width": "124mm", "form": { "name": "select", "options": "门诊手术" } },
+              { "label": "手术日期", "value": "performedAt", "width": "65.4mm", "form": { "name": "date" } }
+            ],
+            "rowHeight": "7.8mm"
+          }
+        ],
+        [{ "label": "检验项目名称", "value": "content.tests.subject", "form": { "name": "select", "options": "门诊检验" }, "size": "full" }],
+        [
+          {
+            "type": "table",
+            "value": "content.tests.results",
+            "minRows": 3,
+            "header": [
+              { "label": "检验指标", "value": "item", "width": "70mm", "form": { "name": "select", "options": "门诊检验项目" } },
+              { "label": "检测值", "value": "result", "width": "36mm" },
+              { "label": "参考值范围", "value": "range", "width": "57.4mm" },
+              { "label": "异常标志", "value": "abnormalFlag", "width": "26mm", "form": { "name": "radio", "mode": "pop", "options": "正常异常" } }
+            ],
+            "rowHeight": "7.8mm"
+          }
+        ],
+        [{ "label": "转归", "value": "content.summary.outcome.type", "form": { "name": "select", "options": "门诊转归" }, "size": "full" }],
+        [{ "label": "责任医师", "value": "content.summary.outcome.doctor", "size": "full" }]
+      ]
+    }
+  ]
+}

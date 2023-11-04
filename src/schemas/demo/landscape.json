@@ -1,0 +1,8 @@
+{
+  "type": "business",
+  "title": "Landscape",
+  "content": [
+    { "type": "rows", "landscape": true, "border": false, "content": [{}, {}] },
+    { "type": "rows", "content": [{}, {}] }
+  ]
+}

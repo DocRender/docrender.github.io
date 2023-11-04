@@ -1,0 +1,25 @@
+{
+  "type": "business",
+  "title": "Table example",
+  "content": [
+    {
+      "type": "rows",
+      "content": [
+        [
+          {
+            "type": "table",
+            "value": "a.b.c",
+            "header": [
+              { "label": "外伤名称", "value": "x", "width": "52mm", "form": { "name": "select", "options": "" } },
+              { "label": "受伤时间", "value": "y", "width": "30.2mm", "form": { "name": "date" } },
+              { "label": "受伤部位", "value": "z", "width": "40mm" },
+              { "label": "治疗机构", "value": "hospital", "width": "37mm" },
+              { "label": "目前状况", "value": "status", "width": "30.2mm", "form": { "name": "select", "options": "", "addonBefore": "前", "addonAfter": "后" } }
+            ],
+            "rowHeight": "7.8mm"
+          }
+        ]
+      ]
+    }
+  ]
+}
